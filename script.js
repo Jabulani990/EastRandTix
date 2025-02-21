@@ -1,12 +1,12 @@
 // Supabase setup
-const supabaseUrl = 'https://oykcsembgwhvjhvynlxf.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im95a2NzZW1iZ3dodmpodnlubHhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAxMzAwODgsImV4cCI6MjA1NTcwNjA4OH0.CexPLdmMcMtBWyn2b6sW741Oh9s8-0UUh_ePpFO4h6I';
+const supabaseUrl = 'https://your-supabase-url.supabase.co';
+const supabaseKey = 'your-supabase-anon-key';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // Stripe setup
 const stripe = Stripe('your-stripe-publishable-key');
 
-// Load events dynamically from Supabase
+// Fetch and display events
 async function loadEvents(category = "all") {
     const { data: events, error } = await supabase
         .from('events')
@@ -17,13 +17,17 @@ async function loadEvents(category = "all") {
     else {
         const eventList = document.getElementById('eventList');
         eventList.innerHTML = events.map(event => `
-            <div class="event-card">
-                <img src="${event.image_url}" alt="${event.name}">
-                <h3>${event.name}</h3>
-                <p>Location: ${event.location}</p>
-                <p>Date: ${event.date}</p>
-                <p>Price: $${event.price}</p>
-                <button class="btn" data-event-id="${event.id}">Buy Ticket</button>
+            <div class="col-md-4 mb-4">
+                <div class="event-card">
+                    <img src="${event.image_url}" alt="${event.name}">
+                    <div class="card-body">
+                        <h3>${event.name}</h3>
+                        <p>Location: ${event.location}</p>
+                        <p>Date: ${event.date}</p>
+                        <p>Price: $${event.price}</p>
+                        <button class="btn btn-primary" data-event-id="${event.id}">Buy Ticket</button>
+                    </div>
+                </div>
             </div>
         `).join('');
 
@@ -84,13 +88,17 @@ document.getElementById('searchForm').addEventListener('submit', async (e) => {
     else {
         const eventList = document.getElementById('eventList');
         eventList.innerHTML = events.map(event => `
-            <div class="event-card">
-                <img src="${event.image_url}" alt="${event.name}">
-                <h3>${event.name}</h3>
-                <p>Location: ${event.location}</p>
-                <p>Date: ${event.date}</p>
-                <p>Price: $${event.price}</p>
-                <button class="btn" data-event-id="${event.id}">Buy Ticket</button>
+            <div class="col-md-4 mb-4">
+                <div class="event-card">
+                    <img src="${event.image_url}" alt="${event.name}">
+                    <div class="card-body">
+                        <h3>${event.name}</h3>
+                        <p>Location: ${event.location}</p>
+                        <p>Date: ${event.date}</p>
+                        <p>Price: $${event.price}</p>
+                        <button class="btn btn-primary" data-event-id="${event.id}">Buy Ticket</button>
+                    </div>
+                </div>
             </div>
         `).join('');
     }
