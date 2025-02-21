@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EastRandTix - Ticket Reselling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EastRandTix</h1>
+        <nav>
+            <a href="#events">Events</a>
+            <a href="#host">Host an Event</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div id="eventList"></div>
+        </section>
+        <section id="host">
+            <h2>Host an Event</h2>
+            <form id="eventForm">
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="text" id="eventLocation" placeholder="Location" required>
+                <input type="date" id="eventDate" required>
+                <input type="number" id="eventPrice" placeholder="Price" required>
+                <button type="submit">List Event</button>
+            </form>
+        </section>
+        <section id="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#signup">Sign Up</a></p>
+        </section>
+        <section id="signup">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
