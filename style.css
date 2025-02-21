@@ -25,20 +25,41 @@ header {
     font-weight: 500;
 }
 
-/* Hero Section */
-#hero {
-    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
-    padding: 100px 0;
+/* Hero Section - Carousel */
+.carousel {
+    margin-top: 80px; /* Offset for fixed header */
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.carousel-item {
+    height: 600px;
+    background-color: #000;
 }
 
-#hero .lead {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    bottom: 30%;
+}
+
+.carousel-caption h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    margin-top: 20px;
 }
 
 /* Events Section */
@@ -125,76 +146,4 @@ footer {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
-}
-
-/* Modal Styles */
-.modal-content {
-    border-radius: 10px;
-}
-
-.modal-header {
-    border-bottom: none;
-}
-
-.modal-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.modal-body form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-body input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.modal-body button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar-nav {
-        margin-top: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 10px 0;
-    }
-
-    .filters {
-        flex-direction: column;
-    }
-
-    .filter-btn {
-        width: 100%;
-    }
-
-    .event-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
-    .event-card h3 {
-        font-size: 1rem;
-    }
-
-    .event-card p {
-        font-size: 0.8rem;
-    }
-
-    .event-card .btn {
-        font-size: 0.9rem;
-    }
 }
