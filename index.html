@@ -5,49 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EastRandTix - Ticket Reselling</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <header>
-        <h1>EastRandTix</h1>
-        <nav>
-            <a href="#events">Events</a>
-            <a href="#host">Host an Event</a>
-            <a href="#login">Login</a>
-        </nav>
+        <div class="container">
+            <h1>EastRandTix</h1>
+            <nav>
+                <ul>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#sports">Sports</a></li>
+                    <li><a href="#venues">Venues</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="events">
+
+    <section id="hero">
+        <div class="container">
+            <h2>Find the Best Events in East Rand</h2>
+            <form id="searchForm">
+                <input type="text" id="searchQuery" placeholder="Search for events..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="container">
             <h2>Upcoming Events</h2>
-            <div id="eventList"></div>
-        </section>
-        <section id="host">
-            <h2>Host an Event</h2>
-            <form id="eventForm">
-                <input type="text" id="eventName" placeholder="Event Name" required>
-                <input type="text" id="eventLocation" placeholder="Location" required>
-                <input type="date" id="eventDate" required>
-                <input type="number" id="eventPrice" placeholder="Price" required>
-                <button type="submit">List Event</button>
-            </form>
-        </section>
-        <section id="login">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <input type="email" id="loginEmail" placeholder="Email" required>
-                <input type="password" id="loginPassword" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="#signup">Sign Up</a></p>
-        </section>
-        <section id="signup">
-            <h2>Sign Up</h2>
-            <form id="signupForm">
-                <input type="email" id="signupEmail" placeholder="Email" required>
-                <input type="password" id="signupPassword" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
-        </section>
-    </main>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="music">Music</button>
+                <button class="filter-btn" data-category="sports">Sports</button>
+                <button class="filter-btn" data-category="comedy">Comedy</button>
+            </div>
+            <div id="eventList" class="event-grid">
+                <!-- Events will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#faq">FAQs</a>
+            </div>
+            <p>&copy; 2023 EastRandTix. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
