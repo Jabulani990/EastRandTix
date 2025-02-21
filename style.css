@@ -1,4 +1,4 @@
-/* Custom Styles */
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
@@ -19,20 +19,41 @@ header {
     font-weight: 500;
 }
 
-/* Hero Section */
-#hero {
-    background: url('https://via.placeholder.com/1500x600') no-repeat center center/cover;
-    padding: 100px 0;
+/* Hero Section - Carousel */
+.carousel {
+    margin-top: 80px; /* Offset for fixed header */
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.carousel-item {
+    height: 600px;
+    background-color: #000;
 }
 
-#hero .lead {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    bottom: 30%;
+}
+
+.carousel-caption h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    margin-top: 20px;
 }
 
 /* Events Section */
