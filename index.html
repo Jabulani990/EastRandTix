@@ -4,62 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EastRandTix - Ticket Reselling</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-    <header>
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed-top">
         <div class="container">
-            <h1>EastRandTix</h1>
-            <nav>
-                <ul>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#sports">Sports</a></li>
-                    <li><a href="#venues">Venues</a></li>
-                    <li><a href="#login">Login</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">EastRandTix</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sports">Sports</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#venues">Venues</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+                    </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
+    <!-- Hero Section -->
+    <section id="hero" class="bg-dark text-white text-center py-5" style="padding-top: 100px !important;">
         <div class="container">
-            <h2>Find the Best Events in East Rand</h2>
-            <form id="searchForm">
-                <input type="text" id="searchQuery" placeholder="Search for events..." required>
-                <button type="submit">Search</button>
-            </form>
+            <h1 class="display-4">Your Gateway to Events in East Rand</h1>
+            <p class="lead">Find the best concerts, sports, comedy shows, and more!</p>
+            <a href="#events" class="btn btn-primary btn-lg">Browse Events</a>
         </div>
     </section>
 
-    <section id="events">
+    <!-- Events Section -->
+    <section id="events" class="py-5">
         <div class="container">
-            <h2>Upcoming Events</h2>
-            <div class="filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="music">Music</button>
-                <button class="filter-btn" data-category="sports">Sports</button>
-                <button class="filter-btn" data-category="comedy">Comedy</button>
-            </div>
-            <div id="eventList" class="event-grid">
-                <!-- Events will be loaded here dynamically -->
+            <h2 class="text-center mb-4">Upcoming Events</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Filters -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Filters</h5>
+                            <button class="btn btn-outline-primary w-100 mb-2 filter-btn active" data-category="all">All</button>
+                            <button class="btn btn-outline-primary w-100 mb-2 filter-btn" data-category="music">Music</button>
+                            <button class="btn btn-outline-primary w-100 mb-2 filter-btn" data-category="sports">Sports</button>
+                            <button class="btn btn-outline-primary w-100 mb-2 filter-btn" data-category="comedy">Comedy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <!-- Event Listings -->
+                    <div id="eventList" class="row">
+                        <!-- Events will be loaded here dynamically -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact</a>
-                <a href="#faq">FAQs</a>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <div class="footer-links mb-3">
+                <a href="#about" class="text-white text-decoration-none me-3">About Us</a>
+                <a href="#contact" class="text-white text-decoration-none me-3">Contact</a>
+                <a href="#faq" class="text-white text-decoration-none">FAQs</a>
             </div>
-            <p>&copy; 2023 EastRandTix. All rights reserved.</p>
+            <p class="mb-0">&copy; 2023 EastRandTix. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
